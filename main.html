@@ -9,15 +9,40 @@
 	padding: 15px 25px;
 	font-family: calibri;
 }
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
 </style>
 
 </head>
 
 <body>
 
-<! Div & Script below for facebook sdk>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+<div class="navbar">
+  <a href="main.html">Home</a>
+  <a href="tools.html">Tools</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <h1>Main text here</h1>
 <h3>Sub text here</h3>
@@ -38,6 +63,10 @@ Things to add:
 
 <p>Congratulations on finding my lair. Share it below!</p>
 
+
+<! Div & Script below for facebook sdk>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
 <! Div below for sharing my site to Facebook>
 <div class="fb-share-button" data-href="https://jonnypui.github.io/Main.html" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjonnypui.github.io%2FMain.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
