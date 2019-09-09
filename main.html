@@ -44,6 +44,8 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  border-radius: 0px 0px 25px 25px;
+  border: 4px black;
 }
 
 .navbar a {
@@ -64,22 +66,16 @@ body {
   color: black;
 }
 
-.button-container {  
-    left: 0;
-    right: 0;
-    width: 156px;
-    height: 45px;
-    margin: 10% auto;
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-    vertical-align: middle;
-    border: 2px solid #000;
-    transition: all 0.4s ease;
-    font-family: 'Montserrat', sans-serif;
-    &:hover {
-      border: 2px solid transparent;
-    }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
 	
 </style>
 
@@ -87,6 +83,12 @@ body {
 
 <body>
 
+
+<div class="container">
+  <img src="picture.jpg" alt="Snow" style="width:100%;">
+  <div class="top-left">Top Left</div>
+
+</div>
 <div class="navbar">
   <p style="text-align:left;" id="name">Jonathan Pui
     <span style="float:right; width: 400px;">
@@ -95,8 +97,8 @@ body {
     <a href="#contact">Contact</a>
     </span>
   </p>
-  
 </div>
+
 
 <h1>Main text here</h1>
 <h3>Sub text here</h3>
@@ -104,9 +106,6 @@ body {
 
 
 
-<div class="button-container">
-  <a href="">Sign Up</a>
-</div>
 
 
 <br><br><br><br>
