@@ -1,143 +1,145 @@
 <html>
-<head>
-<title>Jon's website</title>
+  <head>
+    <title>Jon's website</title>
 
-<style>
+    <style>
 
-body {
-  background: #f2f2f2;
-}
+    body {
+      background: #f2f2f2;
+      margin:0;
+      padding:0;
+    }
 
-#LinkedinButton{
-	background-color: lightblue;
-	text-align: center;
-	padding: 15px 25px;
-	font-family: 'Montserrat', sans-serif;
-	border-radius: 15px 15px 15px 15px;
-  transition: all 0.7s ease;
-}
-#LinkedinButton:hover {
-  background-color: #3e8e41;
-  color: white;
-}
-#ResumeButton{
-	background-color: lightblue;
-	text-align: center;
-	padding: 15px 55px;
-	font-family: 'Montserrat', sans-serif;
-	border-radius: 15px 15px 15px 15px;
-  transition: all 0.7s ease;
-}
-#ResumeButton:hover {
-  background-color: #3e8e41;
-  color: white;
-}
-#Name{
-  color: blue;
-  font-size: 30px;
-  font-weight: bold;
-  font-family: Candara Light;
-}
-.navbar {
-  overflow: hidden;
-  background-color: #00b0b0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  border-radius: 0px 0px 25px 25px;
-  border: 4px black;
-}
+    #LinkedinButton{
+      background-color: lightblue;
+      text-align: center;
+      padding: 15px 25px;
+      font-family: 'Montserrat', sans-serif;
+      border-radius: 15px 15px 15px 15px;
+      transition: all 0.7s ease;
+    }
+    #LinkedinButton:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+    #ResumeButton{
+      background-color: lightblue;
+      text-align: center;
+      padding: 15px 55px;
+      font-family: 'Montserrat', sans-serif;
+      border-radius: 15px 15px 15px 15px;
+      transition: all 0.7s ease;
+    }
+    #ResumeButton:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+    #Name{
+      color: white;
+      font-size: 24px;
+      font-family: Agency FB;
+      padding: 14px 16px;
+    }
+    .navbar {
+      overflow: hidden;
+      background-color: hsla(90, 7%, 30%, 0.788);
+      position: fixed;
+      top: 0;
+      width: 100%;
+    
 
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 100px 100px 100px 100px;
-  text-decoration: none;
-  font-size: 17px;
-  text-shadow: 1px 1px black;
-  transition: all 0.7s ease;
-}
+    }
 
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-}
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: 100px 100px 100px 100px;
+      text-decoration: none;
+      font-size: 17px;
+      text-shadow: 1px 1px black;
+      transition: all 0.7s ease;
+    }
 
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-	
-</style>
+    .navbar a:hover {
+      background: #ddd;
+      color: black;
+    }
 
-</head>
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .top-left {
+      position: absolute;
+      top: 150px;
+      left: 50px;
+    }
+      
+    </style>
 
-<body>
+  </head>
 
-
-<div class="container">
-  <img src="picture.jpg" alt="Snow" style="width:100%;">
-  <div class="top-left">Top Left</div>
-
-</div>
-<div class="navbar">
-  <p style="text-align:left;" id="name">Jonathan Pui
-    <span style="float:right; width: 400px;">
-    <a href="main.html">Home</a>
-    <a href="tools.html">Tools</a>
-    <a href="#contact">Contact</a>
-    </span>
-  </p>
-</div>
+  <body>
 
 
-<h1>Main text here</h1>
-<h3>Sub text here</h3>
+    <div class="container">
+      <img src="picture.jpg" alt="Snow" style="width:100%;">
+      <div class="top-left">Top Left</div>
+
+    </div>
+    <div class="navbar">
+      <p style="text-align:left;" id="name">JP
+        <span style="float:right; width: 1800px;">
+        <a href="main.html">About</a>
+        <a href="tools.html">Work</a>
+        <a href="#contact">Contact</a>
+        </span>
+      </p>
+    </div>
 
 
-
-
-
-
-<br><br><br><br>
+    <h1>Main text here</h1>
+    <h3>Sub text here</h3>
 
 
 
-<a href="https://www.linkedin.com/in/jonathan-pui-b39055a1/" target="_blank" id="LinkedinButton">Linkedin Account</a>
-<a href="Resume.html"target="_blank" id="ResumeButton">Resume</a>
-
-<br><br>
-
-Things to add:
-<dl>
-<dt>- Tools website:</dt>
-	<dd>- calculator</dd>
-	<dd>- notepad </dd>
-</dl>
 
 
 
-<p>Congratulations on finding my lair. Share it below!</p>
+    <br><br><br><br>
 
 
-<! Div & Script below for facebook sdk>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
-<! Div below for sharing my site to Facebook>
-<div class="fb-share-button" data-href="https://jonnypui.github.io/Main.html" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjonnypui.github.io%2FMain.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
-<! Sharing to Twitter>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out Jawwni&#39;s website" data-url="https://jonnypui.github.io/Main.html" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a href="https://www.linkedin.com/in/jonathan-pui-b39055a1/" target="_blank" id="LinkedinButton">Linkedin Account</a>
+    <a href="Resume.html"target="_blank" id="ResumeButton">Resume</a>
 
-</body>
+    <br><br>
+
+    Things to add:
+    <dl>
+    <dt>- Tools website:</dt>
+      <dd>- calculator</dd>
+      <dd>- notepad </dd>
+    </dl>
+
+
+
+    <p>Congratulations on finding my lair. Share it below!</p>
+
+
+    <! Div & Script below for facebook sdk>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+    <! Div below for sharing my site to Facebook>
+    <div class="fb-share-button" data-href="https://jonnypui.github.io/Main.html" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjonnypui.github.io%2FMain.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+    <! Sharing to Twitter>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out Jawwni&#39;s website" data-url="https://jonnypui.github.io/Main.html" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  </body>
 
 </html>
