@@ -73,18 +73,26 @@
             <div id="autoinsurance">
               <div id="autoinsurancebar"></div>
             </div>
+            <p align=center>
+              <input type="text" name="hometext" value="0" size="3">
               <button onclick="addauto()">Add</button>
               <button onclick="subtractauto()">Subtract</button>  
               <button onclick="setauto()">Set</button> 
+              <span style="float:right;">Max: $200</span>
+            </p>
           </li>
           <br>
           <li>Home Utilities
             <div id="home">
               <div id="homebar"></div>
             </div>
+            <p align=center>
+              <input type="text" name="hometext" value="0" size="3">
               <button onclick="addhome()">Add</button>
               <button onclick="subtracthome()">Subtract</button>  
               <button onclick="sethome()">Set</button> 
+              <span style="float:right;">Max: $250</span>
+            </p>
           </li>
           <br>
         </ul>
@@ -99,7 +107,7 @@
   <!-- How the buttons work -->  
   <script>
     var i = 0;
-    function move() {
+    function addauto() {
       if (i == 0) {
         i = 1;
         var elem = document.getElementById("myBar");
