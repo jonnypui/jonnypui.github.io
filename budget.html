@@ -106,26 +106,30 @@
   <!-- How the buttons work -->  
   <script>
     var i = 0;
-    function setauto() { 
-    if (i == 0) {
+    var width = 0;
+     function setauto() { 
+     if (i == 0) {
       i = 1;
       var elem = document.getElementById("autoinsurancebar");
-      var status = document.getElementById("status");
       var value = parseInt(document.getElementById("autotext").value);
-      console.log(value)
-      var width = 0;
-      var id = setInterval(frame, 10);
+      console.log("The Value:" + value)
+      var id = setInterval(frame, 15);
       function frame(){
         if (width == value) {
           clearInterval(id);
-          i = 0;
-        } else {
+           i = 0;
+         } else if(width < value) {
           width++;
+           elem.style.width = width + "%";
+           elem.innerHTML = "$" + width;
+        }else if(width > value) {
+          width--;
           elem.style.width = width + "%";
           elem.innerHTML = "$" + width;
+
         }
-      }
-    }
+       }
+     }
    }
   </script>
 
