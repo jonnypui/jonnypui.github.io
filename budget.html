@@ -105,38 +105,29 @@
 
   <!-- How the buttons work -->  
   <script>
-
-    var autotext = document.getElementById("autotext").value;
-    function addauto(){
-
-
-    }
-
-
-
-
-    console.log(autotext)
-
-
     var i = 0;
-    function addauto() {
-      if (i == 0) {
-        i = 1;
-    var autotext = document.getElementById("autoinsurancebar").value; 
-        var width = 1;
-        var id = setInterval(frame, 10);
-        function frame() {
-          if (width >= 100) {
-            clearInterval(id);
-            i = 0;
-          } else {
-            width++;
-            autotext.style.width = width + "%";
-          }
+    function setauto() { 
+    if (i == 0) {
+      i = 1;
+      var elem = document.getElementById("autoinsurancebar");
+      var status = document.getElementById("status");
+      var value = parseInt(document.getElementById("autotext").value);
+      console.log(value)
+      var width = 0;
+      var id = setInterval(frame, 10);
+      function frame(){
+        if (width == value) {
+          clearInterval(id);
+          i = 0;
+        } else {
+          width++;
+          elem.style.width = width + "%";
+          elem.innerHTML = "$" + width;
         }
       }
     }
-    </script>
+   }
+  </script>
 
 </body>
 

@@ -1,27 +1,58 @@
+<!DOCTYPE html>
 <html>
-<head>
-
-</head>
-<body>
-    <form>
-        <input type="text" id="number" value="0"/><br>
-        <input type="text" id="number2" value="5"/><br>
-        <input type="button" onclick="incrementValue()" value="Increment Value" />
-     </form>
-
-     <script>
-     
-     function incrementValue()
-{
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    document.getElementById('number').value = value;
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
 }
-     
-     
-     
-     </script>
 
-    </body>
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+<body>
+
+<h1>JavaScript Progress Bar</h1>
+
+<div id="myProgress">
+  <div id="myBar">$10</div>
+</div>
+<input type="text" id="number" value="0"/><br>
+<br>
+<button onclick="move()">Add</button> 
+<br><p>Status: <span id="status"></span></p>
+
+<script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var status = document.getElementById("status");
+    var value = parseInt(document.getElementById("number").value);
+    console.log(value)
+    var width = 0;
+    var id = setInterval(frame, 10);
+    function frame(){
+      if (width == value) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = "$" + width;
+      }
+    }
+  }
+}
+
+
+</script>
+
 </body>
+</html>
