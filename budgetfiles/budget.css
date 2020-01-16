@@ -1,0 +1,18 @@
+#autoinsurance{
+    width: 100%;
+     background-color: #ddd;
+  }
+  #autoinsurancebar{
+    width: 0.1%;
+    height: 30px;
+    background-color: #4CAF50;
+  }
+  #home{
+   width: 100%;
+   background-color: #ddd;
+  }
+  #homebar{
+    width: 0.1%;
+    height: 30px;
+    background-color: #4CAF50;
+  }

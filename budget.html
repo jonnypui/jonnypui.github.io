@@ -5,30 +5,7 @@
   <title>JonP Budgets</title>
   <!-- Bootstrap core CSS -->
   <link href="budgetvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Styles for buttons -->  
-  <style>
-  #autoinsurance{
-    width: 100%;
-     background-color: #ddd;
-  }
-  #autoinsurancebar{
-    width: 0.1%;
-    height: 30px;
-    background-color: #4CAF50;
-  }
-  #home{
-   width: 100%;
-   background-color: #ddd;
-  }
-  #homebar{
-    width: 0.1%;
-    height: 30px;
-    background-color: #4CAF50;
-  }
-  </style>
-
-
+  <link type="text/css" href="budgetfiles/budget.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +13,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Project 1</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,19 +42,20 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">A Quick Unsecure Budget Site</h1>
+        <h1 class="mt-5">A Quick Budget Site</h1>
         <p class="lead">From Jon P</p>
+        <span id="status" style="font-size: 20pt; color: red;"></span><br>
         <ul class="list-unstyled">
           <li>Auto Insurance
             <div id="autoinsurance">
               <div id="autoinsurancebar">$0</div>
             </div>
             <p align=center>
-              <input type="text" id="autotext" value="0" size="3">
+              $<input type="text" id="autotext" value="5" size="3">
               <button onclick="addauto()">Add</button>
               <button onclick="subtractauto()">Subtract</button>  
               <button onclick="setauto()">Set</button> 
-              <span style="float:right;">Max: $200</span>
+              <span style="float:right;">Max: $100</span>
             </p>
           </li>
           <br>
@@ -86,11 +64,11 @@
               <div id="homebar">$0</div>
             </div>
             <p align=center>
-              <input type="text" name="hometext" value="0" size="3">
+              $<input type="text" name="hometext" value="0" size="3">
               <button onclick="addhome()">Add</button>
               <button onclick="subtracthome()">Subtract</button>  
               <button onclick="sethome()">Set</button> 
-              <span style="float:right;">Max: $250</span>
+              <span style="float:right;">Max: $200</span>
             </p>
           </li>
           <br>
@@ -107,18 +85,70 @@
   <script>
     var i = 0;
     var width = 0;
-     function setauto() { 
-     if (i == 0) {
+    function setauto() { 
+      if (i == 0) {
       i = 1;
       var elem = document.getElementById("autoinsurancebar");
+      elem.style.backgroundColor = "#42f554";
+      var status = document.getElementById("status");
+      status.innerHTML = "";
       var value = parseInt(document.getElementById("autotext").value);
-      console.log("The Value:" + value)
+      console.log("The Value: " + value)
+      var id = setInterval(frame, 15);
+      function frame(){
+        if(width == value) {
+          clearInterval(id);
+          i = 0;
+         }else if(value > 100){
+          status.innerHTML = " The Value is too large!";
+          clearInterval(id);
+          i = 0;
+         }else if(value < 0){
+          status.innerHTML = " The Value must be bigger than $0!";
+          clearInterval(id);
+          i = 0;
+         }
+         else if(width < value) {
+          width++;
+          elem.style.width = width + "%";
+          elem.innerHTML = "$" + width;
+        }else if(width > value) {
+          width--;
+          elem.style.width = width + "%";
+          elem.innerHTML = "$" + width;
+        }
+        if(width == "100"){
+          elem.style.backgroundColor = "red";
+          status.innerHTML = " Maxed spending on Auto Insurance!!!";
+         }
+       }
+       
+     }
+    }
+
+    function addauto() { 
+      if (i == 0) {
+      i = 1;
+      var elem = document.getElementById("autoinsurancebar");
+      var status = document.getElementById("status");
+      status.innerHTML = "";
+      var value = parseInt(document.getElementById("autotext").value);
+      console.log("The Value: " + value)
       var id = setInterval(frame, 15);
       function frame(){
         if (width == value) {
           clearInterval(id);
-           i = 0;
-         } else if(width < value) {
+          i = 0;
+         }else if(value > 100){
+          status.innerHTML = " The Value is too large!";
+          clearInterval(id);
+          i = 0;
+         }else if(value < 0){
+          status.innerHTML = " The Value must be bigger than $0!";
+          clearInterval(id);
+          i = 0;
+         }
+         else if(width < value) {
           width++;
            elem.style.width = width + "%";
            elem.innerHTML = "$" + width;
@@ -130,7 +160,8 @@
         }
        }
      }
-   }
+    }
+
   </script>
 
 </body>
