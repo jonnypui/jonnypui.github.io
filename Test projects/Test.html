@@ -1,0 +1,27 @@
+<html>
+<head>
+
+</head>
+<body>
+    <form>
+        <input type="text" id="number" value="0"/><br>
+        <input type="text" id="number2" value="5"/><br>
+        <input type="button" onclick="incrementValue()" value="Increment Value" />
+     </form>
+
+     <script>
+     
+     function incrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+}
+     
+     
+     
+     </script>
+
+    </body>
+</body>
