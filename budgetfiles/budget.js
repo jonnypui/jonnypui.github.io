@@ -1,6 +1,8 @@
 var i = 0;
 var autowidth = 0;
+var automax = 100;
 var homewidth = 0;
+var homemax = 200;
 function setauto() {
   if (i == 0) {
     i = 1;
@@ -29,7 +31,7 @@ function setauto() {
         if((autowidth+1) < value){
           autowidth = autowidth + 1;
           autowidth = Math.round((autowidth) * 100) / 100;
-          elem.style.width = width + "%";
+          elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
         }
         else{
@@ -63,6 +65,7 @@ function setauto() {
 
 function addauto() {
   var value = parseFloat(document.getElementById("autotext").value);
+  var autopercent = parseInt(document.getElementById("autopercent").value);
     value = Math.floor((value) * 100) / 100;
     value = value + autowidth;
   if (i == 0) {
@@ -72,6 +75,7 @@ function addauto() {
     var status = document.getElementById("status");
     status.innerHTML = "";
     console.log("The Set Value: " + value)
+    console.log("The Percent Value: " + autopercent)
     var id = setInterval(frame, 1);
     function frame() {
       if (autowidth == value) {
@@ -92,6 +96,7 @@ function addauto() {
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = autowidth / 200;
         }
         else{
           autowidth = autowidth + 0.01;

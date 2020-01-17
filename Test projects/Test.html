@@ -1,64 +1,16 @@
 <!DOCTYPE html>
 <html>
-<style>
-  #autoinsurance{
-    width: 100%;
-     background-color: #ddd;
-  }
-  #autoinsurancebar{
-    width: 0.1%;
-    height: 30px;
-    background-color: #4CAF50;
-  }
-</style>
 <body>
 
+<iframe src="https://jonnypui.github.io/budget.html" width="1000" height="1000" style="border: none;">
+</iframe>
+<iframe src="https://ticket.icondigital.com:8081/tickets/v2#unassigned_tickets?eyJ0aWNrZXRQYWdpbmciOnsiZmlyc3RQYWdlIjoxLCJjdXJyZW50UGFnZSI6MSwicGVyUGFnZSI6MjUsInRvdGFsUGFnZXMiOjEsInNvcnRBdHRyIjoiY3JlYXRlZF9ieSIsInNvcnREaXIiOmZhbHNlLCJ1c2VEZWZhdWx0U29ydCI6ZmFsc2UsInNpdGVfaWQiOiJhbGxfc2l0ZXMiLCJzaXRlX25hbWUiOiJBbGwgU2l0ZXMiLCJ2aWV3TmFtZSI6InVuYXNzaWduZWRfdGlja2V0cyJ9fQ=="
+ width="1000" height="1000" style="border: none; overflow-x:hidden;">
+</iframe>
 
+<iframe src="https://c.stockcharts.com/c-sc/sc?s=AMD&p=D&b=5&g=0&i=0&r=1579299340704" width="1000" height="1000" style="border: none;">
+</iframe>
 
-<h1>JavaScript Progress Bar</h1>
-
-<div id="autoinsurance">
-              <div id="autoinsurancebar">$0</div>
-            </div>
-            <p align=center>
-              <input type="text" id="autotext" value="0" size="3">
-              <button onclick="addauto()">Add</button>
-              <button onclick="subtractauto()">Subtract</button>  
-              <button onclick="setauto()">Set</button> 
-              <span style="float:right;">Max: $200</span>
-            </p>
-          <br>
-
-
-
-          <script>
-            var i = 0;
-            var width = 0;
-            function setauto() { 
-            if (i == 0) {
-              i = 1;
-              var elem = document.getElementById("autoinsurancebar");
-              var value = parseInt(document.getElementById("autotext").value);
-              console.log("The Value:" + value)
-              var id = setInterval(frame, 15);
-              function frame(){
-                if (width == value) {
-                  clearInterval(id);
-                  i = 0;
-                } else if(width < value) {
-                  width++;
-                  elem.style.width = width + "%";
-                  elem.innerHTML = "$" + width;
-                }else if(width > value) {
-                  width--;
-                  elem.style.width = width + "%";
-                  elem.innerHTML = "$" + width;
-
-                }
-              }
-            }
-           }
-          </script>
 
 </body>
 </html>
