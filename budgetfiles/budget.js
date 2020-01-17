@@ -28,15 +28,31 @@ function setauto() {
         i = 0;
       }
       else if (width < value) {
-        width = width + 0.01
-        width = Math.round((width) * 100) / 100;
-        elem.style.width = width + "%";
-        elem.innerHTML = "$" + width;
+        if((width+1) < value){
+          width = width + 1;
+          width = Math.round((width) * 100) / 100;
+          elem.style.width = width + "%";
+          elem.innerHTML = "$" + width;
+        }
+        else{
+          width = width + 0.01;
+          width = Math.round((width) * 100) / 100;
+          elem.style.width = width + "%";
+          elem.innerHTML = "$" + width;
+        }
       }else if (width > value) {
-        width = width - 0.01
-        width = Math.round((width) * 100) / 100;
-        elem.style.width = width + "%";
-        elem.innerHTML = "$" + width;
+        if((width-1) > value){
+          width = width - 1;
+          width = Math.round((width) * 100) / 100;
+          elem.style.width = width + "%";
+          elem.innerHTML = "$" + width;
+        }
+        else{
+          width = width - 0.01;
+          width = Math.round((width) * 100) / 100;
+          elem.style.width = width + "%";
+          elem.innerHTML = "$" + width;
+        }
       }
       if (width == "100") {
         elem.style.backgroundColor = "red";
