@@ -1,8 +1,6 @@
-
-
 var i = 0;
-var width = 0;
-var count = 0;
+var autowidth = 0;
+var homewidth = 0;
 function setauto() {
   if (i == 0) {
     i = 1;
@@ -15,7 +13,7 @@ function setauto() {
     console.log("The Set Value: " + value)
     var id = setInterval(frame, 1);
     function frame() {
-      if (width == value) {
+      if (autowidth == value) {
         clearInterval(id);
         i = 0;
       } else if (value > 100) {
@@ -27,34 +25,34 @@ function setauto() {
         clearInterval(id);
         i = 0;
       }
-      else if (width < value) {
-        if((width+1) < value){
-          width = width + 1;
-          width = Math.round((width) * 100) / 100;
+      else if (autowidth < value) {
+        if((autowidth+1) < value){
+          autowidth = autowidth + 1;
+          autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+          elem.innerHTML = "$" + autowidth;
         }
         else{
-          width = width + 0.01;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+          autowidth = autowidth + 0.01;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
-      }else if (width > value) {
-        if((width-1) > value){
-          width = width - 1;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+      }else if (autowidth > value) {
+        if((autowidth-1) > value){
+          autowidth = autowidth - 1;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
         else{
-          width = width - 0.01;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+          autowidth = autowidth - 0.01;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
       }
-      if (width == "100") {
+      if (autowidth == "100") {
         elem.style.backgroundColor = "red";
         status.innerHTML = " Maxed spending on Auto Insurance!!!";
       }
@@ -66,7 +64,7 @@ function setauto() {
 function addauto() {
   var value = parseFloat(document.getElementById("autotext").value);
     value = Math.floor((value) * 100) / 100;
-    value = value + width;
+    value = value + autowidth;
   if (i == 0) {
     i = 1;
     var elem = document.getElementById("autoinsurancebar");
@@ -76,7 +74,7 @@ function addauto() {
     console.log("The Set Value: " + value)
     var id = setInterval(frame, 1);
     function frame() {
-      if (width == value) {
+      if (autowidth == value) {
         clearInterval(id);
         i = 0;
       } else if (value > 100) {
@@ -88,34 +86,34 @@ function addauto() {
         clearInterval(id);
         i = 0;
       }
-      else if (width < value) {
-        if((width+1) < value){
-          width = width + 1;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+      else if (autowidth < value) {
+        if((autowidth+1) < value){
+          autowidth = autowidth + 1;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
         else{
-          width = width + 0.01;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+          autowidth = autowidth + 0.01;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
-      }else if (width > value) {
-        if((width-1) > value){
-          width = width - 1;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+      }else if (autowidth > value) {
+        if((autowidth-1) > value){
+          autowidth = autowidth - 1;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
         else{
-          width = width - 0.01;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+          autowidth = autowidth - 0.01;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
       }
-      if (width == "100") {
+      if (autowidth == "100") {
         elem.style.backgroundColor = "red";
         status.innerHTML = " Maxed spending on Auto Insurance!!!";
       }
@@ -127,7 +125,7 @@ function addauto() {
 function subtractauto() {
   var value = parseFloat(document.getElementById("autotext").value);
     value = Math.floor((value) * 100) / 100;
-    value = value - width;
+    value = value - autowidth;
     value = value * -1;
   if (i == 0) {
     i = 1;
@@ -138,7 +136,7 @@ function subtractauto() {
     console.log("The Set Value: " + value)
     var id = setInterval(frame, 1);
     function frame() {
-      if (width == value) {
+      if (autowidth == value) {
         clearInterval(id);
         i = 0;
       } else if (value > 100) {
@@ -150,39 +148,39 @@ function subtractauto() {
         clearInterval(id);
         i = 0;
       }
-      else if (width < value) {
-        if(width == 0){
+      else if (autowidth < value) {
+        if(autowidth == 0){
          status.innerHTML = " The Value must be bigger than $0!";
          clearInterval(id);
          i = 0;
         }
-        else if((width+1) < value){
-          width = width + 1;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+        else if((autowidth+1) < value){
+          autowidth = autowidth + 1;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
         else{
-          width = width + 0.01;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+          autowidth = autowidth + 0.01;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
-      }else if (width > value) {
-        if((width-1) > value){
-          width = width - 1;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+      }else if (autowidth > value) {
+        if((autowidth-1) > value){
+          autowidth = autowidth - 1;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
         else{
-          width = width - 0.01;
-          width = Math.round((width) * 100) / 100;
-          elem.style.width = width + "%";
-          elem.innerHTML = "$" + width;
+          autowidth = autowidth - 0.01;
+          autowidth = Math.round((autowidth) * 100) / 100;
+          elem.style.width = autowidth + "%";
+          elem.innerHTML = "$" + autowidth;
         }
       }
-      if (width == "100") {
+      if (autowidth == "100") {
         elem.style.backgroundColor = "red";
         status.innerHTML = " Maxed spending on Auto Insurance!!!";
       }
@@ -192,3 +190,190 @@ function subtractauto() {
 }
 
 
+function sethome() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("homebar");
+    elem.style.backgroundColor = "#42f554";
+    var status = document.getElementById("status");
+    status.innerHTML = "";
+    var value = parseFloat(document.getElementById("hometext").value);
+    value = Math.floor((value) * 100) / 100;
+    console.log("The Set Value: " + value)
+    var id = setInterval(frame, 1);
+    function frame() {
+      if (homewidth == value) {
+        clearInterval(id);
+        i = 0;
+      } else if (value > 100) {
+        status.innerHTML = " The Value is too large!";
+        clearInterval(id);
+        i = 0;
+      } else if (value < 0) {
+        status.innerHTML = " The Value must be bigger than $0!";
+        clearInterval(id);
+        i = 0;
+      }
+      else if (homewidth < value) {
+        if((homewidth+1) < value){
+          homewidth = homewidth + 1;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+        else{
+          homewidth = homewidth + 0.01;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+      }else if (homewidth > value) {
+        if((homewidth-1) > value){
+          homewidth = homewidth - 1;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+        else{
+          homewidth = homewidth - 0.01;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+      }
+      if (homewidth == "100") {
+        elem.style.backgroundColor = "red";
+        status.innerHTML = " Maxed spending on Home!!!";
+      }
+    }
+
+  }
+}
+
+function addhome() {
+  var value = parseFloat(document.getElementById("hometext").value);
+    value = Math.floor((value) * 100) / 100;
+    value = value + homewidth;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("homebar");
+    elem.style.backgroundColor = "#42f554";
+    var status = document.getElementById("status");
+    status.innerHTML = "";
+    console.log("The Set Value: " + value)
+    var id = setInterval(frame, 1);
+    function frame() {
+      if (homewidth == value) {
+        clearInterval(id);
+        i = 0;
+      } else if (value > 100) {
+        status.innerHTML = " The Value is too large!";
+        clearInterval(id);
+        i = 0;
+      } else if (value < 0) {
+        status.innerHTML = " The Value must be bigger than $0!";
+        clearInterval(id);
+        i = 0;
+      }
+      else if (homewidth < value) {
+        if((homewidth+1) < value){
+          homewidth = homewidth + 1;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+        else{
+          homewidth = homewidth + 0.01;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+      }else if (homewidth > value) {
+        if((homewidth-1) > value){
+          homewidth = homewidth - 1;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+        else{
+          homewidth = homewidth - 0.01;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+      }
+      if (homewidth == "100") {
+        elem.style.backgroundColor = "red";
+        status.innerHTML = " Maxed spending on Home!!!";
+      }
+    }
+
+  }
+}
+
+function subtracthome() {
+  var value = parseFloat(document.getElementById("hometext").value);
+    value = Math.floor((value) * 100) / 100;
+    value = value - homewidth;
+    value = value * -1;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("homebar");
+    elem.style.backgroundColor = "#42f554";
+    var status = document.getElementById("status");
+    status.innerHTML = "";
+    console.log("The Set Value: " + value)
+    var id = setInterval(frame, 1);
+    function frame() {
+      if (homewidth == value) {
+        clearInterval(id);
+        i = 0;
+      } else if (value > 100) {
+        status.innerHTML = " The Value is too large!";
+        clearInterval(id);
+        i = 0;
+      } else if (value < 0) {
+        status.innerHTML = " The Value must be bigger than $0!";
+        clearInterval(id);
+        i = 0;
+      }
+      else if (homewidth < value) {
+        if(homewidth == 0){
+         status.innerHTML = " The Value must be bigger than $0!";
+         clearInterval(id);
+         i = 0;
+        }
+        else if((homewidth+1) < value){
+          homewidth = homewidth + 1;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+        else{
+          homewidth = homewidth + 0.01;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+      }else if (homewidth > value) {
+        if((homewidth-1) > value){
+          homewidth = homewidth - 1;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+        else{
+          homewidth = homewidth - 0.01;
+          homewidth = Math.round((homewidth) * 100) / 100;
+          elem.style.width = homewidth + "%";
+          elem.innerHTML = "$" + homewidth;
+        }
+      }
+      if (homewidth == "100") {
+        elem.style.backgroundColor = "red";
+        status.innerHTML = " Maxed spending on Home!!!";
+      }
+    }
+
+  }
+}
