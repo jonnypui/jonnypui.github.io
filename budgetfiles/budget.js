@@ -11,9 +11,9 @@ function setauto() {
     var status = document.getElementById("status");
     status.innerHTML = "";
     var value = parseFloat(document.getElementById("autotext").value);
-    value = Math.floor(value);
+    value = Math.floor((value) * 100) / 100;
     console.log("The Set Value: " + value)
-    var id = setInterval(frame, 15);
+    var id = setInterval(frame, 1);
     function frame() {
       if (width == value) {
         clearInterval(id);
@@ -28,12 +28,13 @@ function setauto() {
         i = 0;
       }
       else if (width < value) {
-        width = Math.floor(width + 1);
+        width = width + 0.01
+        width = Math.round((width) * 100) / 100;
         elem.style.width = width + "%";
         elem.innerHTML = "$" + width;
       }else if (width > value) {
-
-        width = Math.floor(width - 1);
+        width = width - 0.01
+        width = Math.round((width) * 100) / 100;
         elem.style.width = width + "%";
         elem.innerHTML = "$" + width;
       }
@@ -45,6 +46,8 @@ function setauto() {
 
   }
 }
+width = Math.floor(width + 1);
+width = Math.floor(width - 1);
 
 function addauto() {
   if (i == 0) {
