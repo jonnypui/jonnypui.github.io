@@ -3,9 +3,11 @@ var autowidth = 0;
 var automax = 100;
 var homewidth = 0;
 var homemax = 200;
+
 function setauto() {
   if (i == 0) {
     i = 1;
+    var autopercent = document.getElementById("autopercent");
     var elem = document.getElementById("autoinsurancebar");
     elem.style.backgroundColor = "#42f554";
     var status = document.getElementById("status");
@@ -33,12 +35,14 @@ function setauto() {
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
         else{
           autowidth = autowidth + 0.01;
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
       }else if (autowidth > value) {
         if((autowidth-1) > value){
@@ -46,12 +50,14 @@ function setauto() {
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
         else{
           autowidth = autowidth - 0.01;
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
       }
       if (autowidth == "100") {
@@ -65,17 +71,17 @@ function setauto() {
 
 function addauto() {
   var value = parseFloat(document.getElementById("autotext").value);
-  var autopercent = parseInt(document.getElementById("autopercent").value);
+
     value = Math.floor((value) * 100) / 100;
     value = value + autowidth;
   if (i == 0) {
     i = 1;
+    var autopercent = document.getElementById("autopercent");
     var elem = document.getElementById("autoinsurancebar");
     elem.style.backgroundColor = "#42f554";
     var status = document.getElementById("status");
     status.innerHTML = "";
     console.log("The Set Value: " + value)
-    console.log("The Percent Value: " + autopercent)
     var id = setInterval(frame, 1);
     function frame() {
       if (autowidth == value) {
@@ -96,13 +102,14 @@ function addauto() {
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
-          autopercent.innerHTML = autowidth / 200;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
         else{
           autowidth = autowidth + 0.01;
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
       }else if (autowidth > value) {
         if((autowidth-1) > value){
@@ -110,12 +117,14 @@ function addauto() {
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
         else{
           autowidth = autowidth - 0.01;
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
       }
       if (autowidth == "100") {
@@ -128,6 +137,7 @@ function addauto() {
 }
 
 function subtractauto() {
+  var autopercent = document.getElementById("autopercent");
   var value = parseFloat(document.getElementById("autotext").value);
     value = Math.floor((value) * 100) / 100;
     value = value - autowidth;
@@ -164,12 +174,14 @@ function subtractauto() {
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
         else{
           autowidth = autowidth + 0.01;
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
       }else if (autowidth > value) {
         if((autowidth-1) > value){
@@ -177,12 +189,14 @@ function subtractauto() {
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
         else{
           autowidth = autowidth - 0.01;
           autowidth = Math.round((autowidth) * 100) / 100;
           elem.style.width = autowidth + "%";
           elem.innerHTML = "$" + autowidth;
+          autopercent.innerHTML = ((autowidth / automax) * 100).toFixed(2);
         }
       }
       if (autowidth == "100") {
