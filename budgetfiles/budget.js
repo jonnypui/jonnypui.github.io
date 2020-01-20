@@ -479,7 +479,7 @@ function setfood() {
       }
       if (foodwidth == "300") {
         elem.style.backgroundColor = "red";
-        status.innerHTML = " Maxed spending on food Utilities!!!";
+        status.innerHTML = " Maxed spending on Food!!!";
       }
     }
 
@@ -545,7 +545,7 @@ function addfood() {
     }
     if (foodwidth == "300") {
       elem.style.backgroundColor = "red";
-      status.innerHTML = " Maxed spending on food Utilities!!!";
+      status.innerHTML = " Maxed spending on Food!!!";
     }
   }
 
@@ -617,7 +617,7 @@ function subtractfood() {
       }
       if (foodwidth == "300") {
         elem.style.backgroundColor = "red";
-        status.innerHTML = " Maxed spending on food Insurance!!!";
+        status.innerHTML = " Maxed spending on Food!!!";
       }
     }
 
@@ -684,7 +684,7 @@ function sethobbies() {
       }
       if (hobbieswidth == "150") {
         elem.style.backgroundColor = "red";
-        status.innerHTML = " Maxed spending on hobbies Utilities!!!";
+        status.innerHTML = " Maxed spending on Hobbies!!!";
       }
     }
 
@@ -750,7 +750,7 @@ function addhobbies() {
     }
     if (hobbieswidth == "150") {
       elem.style.backgroundColor = "red";
-      status.innerHTML = " Maxed spending on hobbies Utilities!!!";
+      status.innerHTML = " Maxed spending on Hobbies!!!";
     }
   }
 
@@ -822,7 +822,7 @@ function subtracthobbies() {
       }
       if (hobbieswidth == "150") {
         elem.style.backgroundColor = "red";
-        status.innerHTML = " Maxed spending on hobbies Insurance!!!";
+        status.innerHTML = " Maxed spending on Hobbies!!!";
       }
     }
 
