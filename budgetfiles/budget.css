@@ -22,3 +22,29 @@
     background-color: #4CAF50;
 
   }
+  #food{
+    border-radius: 25px;
+    width: 100%;
+    background-color: #ddd;
+
+  }
+  #foodbar{
+    border-radius: 25px;
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+
+  }
+  #hobbies{
+    border-radius: 25px;
+    width: 100%;
+    background-color: #ddd;
+
+  }
+  #hobbiesbar{
+    border-radius: 25px;
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+
+  }

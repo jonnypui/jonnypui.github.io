@@ -3,7 +3,12 @@ var autowidth = 0;
 var automax = 100;
 var homewidth = 0;
 var homemax = 200;
+var foodwidth = 0;
+var foodmax = 300;
+var hobbieswidth = 0;
+var hobbiesmax = 150;
 
+//Code for Auto Insurance
 function setauto() {
   if (i == 0) {
     i = 1;
@@ -208,6 +213,7 @@ function subtractauto() {
   }
 }
 
+//code for home insurance
 
 function sethome() {
   if (i == 0) {
@@ -407,6 +413,416 @@ function subtracthome() {
       if (homewidth == "200") {
         elem.style.backgroundColor = "red";
         status.innerHTML = " Maxed spending on home Insurance!!!";
+      }
+    }
+
+  }
+}
+
+//code for Resturants & Groceries
+
+function setfood() {
+  if (i == 0) {
+    i = 1;
+    var foodpercent = document.getElementById("foodpercent");
+    var elem = document.getElementById("foodbar");
+    elem.style.backgroundColor = "#42f554";
+    var status = document.getElementById("status");
+    status.innerHTML = "";
+    var value = parseFloat(document.getElementById("foodtext").value);
+    value = Math.floor((value) * 100) / 100;
+    console.log("The Set Value: " + value)
+    var id = setInterval(frame, 1);
+    function frame() {
+      if (foodwidth == value) {
+        clearInterval(id);
+        i = 0;
+      } else if (value > 300) {
+        status.innerHTML = " The Value is too large!";
+        clearInterval(id);
+        i = 0;
+      } else if (value < 0) {
+        status.innerHTML = " The Value must be bigger than $0!";
+        clearInterval(id);
+        i = 0;
+      }
+      else if (foodwidth < value) {
+        if((foodwidth+1) < value){
+          foodwidth = foodwidth + 1;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+        else{
+          foodwidth = foodwidth + 0.01;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+      }else if (foodwidth > value) {
+        if((foodwidth-1) > value){
+          foodwidth = foodwidth - 1;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+        else{
+          foodwidth = foodwidth - 0.01;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+      }
+      if (foodwidth == "300") {
+        elem.style.backgroundColor = "red";
+        status.innerHTML = " Maxed spending on food Utilities!!!";
+      }
+    }
+
+  }
+}
+
+function addfood() {
+  var value = parseFloat(document.getElementById("foodtext").value);
+  value = Math.floor((value) * 100) / 100;
+  value = value + foodwidth;
+  if (i == 0) {
+  i = 1;
+  var foodpercent = document.getElementById("foodpercent");
+  var elem = document.getElementById("foodbar");
+  elem.style.backgroundColor = "#42f554";
+  var status = document.getElementById("status");
+  status.innerHTML = "";
+  console.log("The Set Value: " + value)
+  var id = setInterval(frame, 1);
+  function frame() {
+    if (foodwidth == value) {
+      clearInterval(id);
+      i = 0;
+    } else if (value > 300) {
+      status.innerHTML = " The Value is too large!";
+      clearInterval(id);
+      i = 0;
+    } else if (value < 0) {
+      status.innerHTML = " The Value must be bigger than $0!";
+      clearInterval(id);
+      i = 0;
+    }
+    else if (foodwidth < value) {
+      if((foodwidth+1) < value){
+        foodwidth = foodwidth + 1;
+        foodwidth = Math.round((foodwidth) * 100) / 100;
+        elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + foodwidth;
+        foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+      }
+      else{
+        foodwidth = foodwidth + 0.01;
+        foodwidth = Math.round((foodwidth) * 100) / 100;
+        elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + foodwidth;
+        foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+      }
+    }else if (foodwidth > value) {
+      if((foodwidth-1) > value){
+        foodwidth = foodwidth - 1;
+        foodwidth = Math.round((foodwidth) * 100) / 100;
+        elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + foodwidth;
+        foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+      }
+      else{
+        foodwidth = foodwidth - 0.01;
+        foodwidth = Math.round((foodwidth) * 100) / 100;
+        elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + foodwidth;
+        foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+      }
+    }
+    if (foodwidth == "300") {
+      elem.style.backgroundColor = "red";
+      status.innerHTML = " Maxed spending on food Utilities!!!";
+    }
+  }
+
+}
+}
+
+function subtractfood() {
+  var foodpercent = document.getElementById("foodpercent");
+  var value = parseFloat(document.getElementById("foodtext").value);
+    value = Math.floor((value) * 100) / 100;
+    value = value - foodwidth;
+    value = value * -1;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("foodbar");
+    elem.style.backgroundColor = "#42f554";
+    var status = document.getElementById("status");
+    status.innerHTML = "";
+    console.log("The Set Value: " + value)
+    var id = setInterval(frame, 1);
+    function frame() {
+      if (foodwidth == value) {
+        clearInterval(id);
+        i = 0;
+      } else if (value > 300) {
+        status.innerHTML = " The Value is too large!";
+        clearInterval(id);
+        i = 0;
+      } else if (value < 0) {
+        status.innerHTML = " The Value must be bigger than $0!";
+        clearInterval(id);
+        i = 0;
+      }
+      else if (foodwidth < value) {
+        if(foodwidth == 0){
+         status.innerHTML = " The Value must be bigger than $0!";
+         clearInterval(id);
+         i = 0;
+        }
+        else if((foodwidth+1) < value){
+          foodwidth = foodwidth + 1;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+        else{
+          foodwidth = foodwidth + 0.01;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+      }else if (foodwidth > value) {
+        if((foodwidth-1) > value){
+          foodwidth = foodwidth - 1;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+        else{
+          foodwidth = foodwidth - 0.01;
+          foodwidth = Math.round((foodwidth) * 100) / 100;
+          elem.style.width = ((foodwidth/foodmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + foodwidth;
+          foodpercent.innerHTML = ((foodwidth / foodmax) * 100).toFixed(2);
+        }
+      }
+      if (foodwidth == "300") {
+        elem.style.backgroundColor = "red";
+        status.innerHTML = " Maxed spending on food Insurance!!!";
+      }
+    }
+
+  }
+}
+
+//code for hobbies
+
+function sethobbies() {
+  if (i == 0) {
+    i = 1;
+    var hobbiespercent = document.getElementById("hobbiespercent");
+    var elem = document.getElementById("hobbiesbar");
+    elem.style.backgroundColor = "#42f554";
+    var status = document.getElementById("status");
+    status.innerHTML = "";
+    var value = parseFloat(document.getElementById("hobbiestext").value);
+    value = Math.floor((value) * 100) / 100;
+    console.log("The Set Value: " + value)
+    var id = setInterval(frame, 1);
+    function frame() {
+      if (hobbieswidth == value) {
+        clearInterval(id);
+        i = 0;
+      } else if (value > 150) {
+        status.innerHTML = " The Value is too large!";
+        clearInterval(id);
+        i = 0;
+      } else if (value < 0) {
+        status.innerHTML = " The Value must be bigger than $0!";
+        clearInterval(id);
+        i = 0;
+      }
+      else if (hobbieswidth < value) {
+        if((hobbieswidth+1) < value){
+          hobbieswidth = hobbieswidth + 1;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+        else{
+          hobbieswidth = hobbieswidth + 0.01;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+      }else if (hobbieswidth > value) {
+        if((hobbieswidth-1) > value){
+          hobbieswidth = hobbieswidth - 1;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+        else{
+          hobbieswidth = hobbieswidth - 0.01;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+      }
+      if (hobbieswidth == "150") {
+        elem.style.backgroundColor = "red";
+        status.innerHTML = " Maxed spending on hobbies Utilities!!!";
+      }
+    }
+
+  }
+}
+
+function addhobbies() {
+  var value = parseFloat(document.getElementById("hobbiestext").value);
+  value = Math.floor((value) * 100) / 100;
+  value = value + hobbieswidth;
+  if (i == 0) {
+  i = 1;
+  var hobbiespercent = document.getElementById("hobbiespercent");
+  var elem = document.getElementById("hobbiesbar");
+  elem.style.backgroundColor = "#42f554";
+  var status = document.getElementById("status");
+  status.innerHTML = "";
+  console.log("The Set Value: " + value)
+  var id = setInterval(frame, 1);
+  function frame() {
+    if (hobbieswidth == value) {
+      clearInterval(id);
+      i = 0;
+    } else if (value > 150) {
+      status.innerHTML = " The Value is too large!";
+      clearInterval(id);
+      i = 0;
+    } else if (value < 0) {
+      status.innerHTML = " The Value must be bigger than $0!";
+      clearInterval(id);
+      i = 0;
+    }
+    else if (hobbieswidth < value) {
+      if((hobbieswidth+1) < value){
+        hobbieswidth = hobbieswidth + 1;
+        hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+        elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + hobbieswidth;
+        hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+      }
+      else{
+        hobbieswidth = hobbieswidth + 0.01;
+        hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+        elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + hobbieswidth;
+        hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+      }
+    }else if (hobbieswidth > value) {
+      if((hobbieswidth-1) > value){
+        hobbieswidth = hobbieswidth - 1;
+        hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+        elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + hobbieswidth;
+        hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+      }
+      else{
+        hobbieswidth = hobbieswidth - 0.01;
+        hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+        elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+        elem.innerHTML = "$" + hobbieswidth;
+        hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+      }
+    }
+    if (hobbieswidth == "150") {
+      elem.style.backgroundColor = "red";
+      status.innerHTML = " Maxed spending on hobbies Utilities!!!";
+    }
+  }
+
+}
+}
+
+function subtracthobbies() {
+  var hobbiespercent = document.getElementById("hobbiespercent");
+  var value = parseFloat(document.getElementById("hobbiestext").value);
+    value = Math.floor((value) * 100) / 100;
+    value = value - hobbieswidth;
+    value = value * -1;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("hobbiesbar");
+    elem.style.backgroundColor = "#42f554";
+    var status = document.getElementById("status");
+    status.innerHTML = "";
+    console.log("The Set Value: " + value)
+    var id = setInterval(frame, 1);
+    function frame() {
+      if (hobbieswidth == value) {
+        clearInterval(id);
+        i = 0;
+      } else if (value > 150) {
+        status.innerHTML = " The Value is too large!";
+        clearInterval(id);
+        i = 0;
+      } else if (value < 0) {
+        status.innerHTML = " The Value must be bigger than $0!";
+        clearInterval(id);
+        i = 0;
+      }
+      else if (hobbieswidth < value) {
+        if(hobbieswidth == 0){
+         status.innerHTML = " The Value must be bigger than $0!";
+         clearInterval(id);
+         i = 0;
+        }
+        else if((hobbieswidth+1) < value){
+          hobbieswidth = hobbieswidth + 1;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+        else{
+          hobbieswidth = hobbieswidth + 0.01;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+      }else if (hobbieswidth > value) {
+        if((hobbieswidth-1) > value){
+          hobbieswidth = hobbieswidth - 1;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+        else{
+          hobbieswidth = hobbieswidth - 0.01;
+          hobbieswidth = Math.round((hobbieswidth) * 100) / 100;
+          elem.style.width = ((hobbieswidth/hobbiesmax)* 100).toFixed(2) + "%";
+          elem.innerHTML = "$" + hobbieswidth;
+          hobbiespercent.innerHTML = ((hobbieswidth / hobbiesmax) * 100).toFixed(2);
+        }
+      }
+      if (hobbieswidth == "150") {
+        elem.style.backgroundColor = "red";
+        status.innerHTML = " Maxed spending on hobbies Insurance!!!";
       }
     }
 
