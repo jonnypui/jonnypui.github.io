@@ -37,7 +37,7 @@
 
 .valid:before {
   position: relative;
-  left: -35px;
+
   content: "✔";
 }
 
@@ -48,6 +48,6 @@
 
 .invalid:before {
   position: relative;
-  left: -35px;
+
   content: "✖";
 }

@@ -52,13 +52,13 @@
       <h1 class="h5 mb-3 font-weight-normal">Create user information below</h1>
 
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" class="form-control" placeholder="Email address">
+      <input type="email" class="form-control" placeholder="Email address" required>
 
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="psw" name="psw" class="form-control" placeholder="Password">
+      <label class="sr-only">Password</label>
+      <input type="password" id="psw" name="psw" class="form-control" placeholder="Password" required>
 
-      <label for="inputPassword2" class="sr-only">Password</label>
-      <input type="password" class="form-control" placeholder="Confirm Password" >
+      <label class="sr-only">Confirm Password</label>
+      <input type="password" id="confirmpassword" class="form-control" placeholder="Confirm Password" required>
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
     </div>
@@ -67,11 +67,11 @@
 
         <div class="w-25 p-3 rounded border border-primary .bg-light" id="message">
 
-            <h3>Password must contain the following:</h3>
-            <p style="font-size:100%;" id="letter" class="invalid">A <b>lowercase</b> letter</p>
-            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-            <p id="number" class="invalid">A <b>number</b></p>
-            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            <h4>Password must contain the following:</h4>
+            <p id="letter" class="invalid">A lowercase letter</p>
+            <p id="capital" class="invalid">A capital (uppercase) letter</p>
+            <p id="number" class="invalid">A number</p>
+            <p id="length" class="invalid">Minimum 8 characters</p>
             <p id="repeat" class="invalid">Confirm Password</p>
         </div>
 
@@ -81,10 +81,26 @@
 
     <script>
       var myInput = document.getElementById("psw");
+      var myConfirm = document.getElementById("confirmpassword");
       var letter = document.getElementById("letter");
       var capital = document.getElementById("capital");
       var number = document.getElementById("number");
       var length = document.getElementById("length");
+      var repeat = document.getElementById("repeat");
+
+      myConfirm.onkeyup = function() {
+        // Validate Confirm Password
+        if(myInput.value != myConfirm.value){
+          console.log("Failed");
+          repeat.classList.remove("valid");
+          repeat.classList.add("invalid");
+          
+        }else{
+          console.log("Passed");
+          repeat.classList.remove("invalid");
+          repeat.classList.add("valid");
+        }
+      }
 
       // When the user starts to type something inside the password field
       myInput.onkeyup = function() {
@@ -127,6 +143,9 @@
           length.classList.add("invalid");
         }
       }
+
+      
+
       </script>
 
 </html>
