@@ -53,20 +53,21 @@
 
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" class="form-control" placeholder="Email address" required>
-
+      
       <label class="sr-only">Password</label>
-      <input type="password" id="psw" name="psw" class="form-control" placeholder="Password" required>
-
+      <input type="password" id="psw" name="psw" class="form-control" placeholder="Password" required> 
+      
       <label class="sr-only">Confirm Password</label>
       <input type="password" id="confirmpassword" class="form-control" placeholder="Confirm Password" required>
-
+      <input type="checkbox" onclick="checkpassword()">Show Passwords
+      <br><br>
       <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="checkform()">Register</button>
     </div>
+
       <!--Div for Password Requirements-->
       <center>
 
         <div class="w-25 p-3 rounded border border-primary .bg-light" id="message">
-
             <h4>Password must contain the following:</h4>
             <p id="letter" class="invalid">A lowercase letter</p>
             <p id="capital" class="invalid">A capital (uppercase) letter</p>
@@ -83,22 +84,40 @@
       var myInput = document.getElementById("psw");
       var myConfirm = document.getElementById("confirmpassword");
       var letter = document.getElementById("letter");
+      var checkletter = false;
       var capital = document.getElementById("capital");
+      var checkcapital = false;
       var number = document.getElementById("number");
+      var checknumber = false;
       var length = document.getElementById("length");
+      var checklength = false;
       var repeat = document.getElementById("repeat");
+      var checkrepeat = false;
 
+      //Check Password Checkbox
+      function checkpassword(){
+        if (myInput.type === "password") {
+          myInput.type = "text";
+          myConfirm.type = "text";
+        } else {
+          myInput.type = "password";
+          myConfirm.type = "password";
+        }
+
+      }
       myConfirm.onkeyup = function() {
         // Validate Confirm Password
         if(myInput.value != myConfirm.value){
           console.log("Failed");
           repeat.classList.remove("valid");
           repeat.classList.add("invalid");
+          checkrepeat = false;
           
         }else{
           console.log("Passed");
           repeat.classList.remove("invalid");
           repeat.classList.add("valid");
+          checkrepeat = true;
         }
       }
 
@@ -109,9 +128,11 @@
         if(myInput.value.match(lowerCaseLetters)) {  
           letter.classList.remove("invalid");
           letter.classList.add("valid");
+          checkletter = true;
         } else {
           letter.classList.remove("valid");
           letter.classList.add("invalid");
+          checkletter = false;
         }
         
         // Validate capital letters
@@ -119,9 +140,11 @@
         if(myInput.value.match(upperCaseLetters)) {  
           capital.classList.remove("invalid");
           capital.classList.add("valid");
+          checkcapital = true;
         } else {
           capital.classList.remove("valid");
           capital.classList.add("invalid");
+          checkcapital = false;
         }
       
         // Validate numbers
@@ -129,23 +152,34 @@
         if(myInput.value.match(numbers)) {  
           number.classList.remove("invalid");
           number.classList.add("valid");
+          checknumber = true;
         } else {
           number.classList.remove("valid");
           number.classList.add("invalid");
+          checknumber = false;
         }
         
         // Validate length
         if(myInput.value.length >= 8) {
           length.classList.remove("invalid");
           length.classList.add("valid");
+          checklength = true;
         } else {
           length.classList.remove("valid");
           length.classList.add("invalid");
+          checklength = false;
         }
       }
 
+      //Check if all booleans pass
       function checkform(){
-        console.log("derp");
+        if(checklength == true && checknumber == true && checkcapital == true && checkletter == true && checkrepeat == true){
+          alert("PASS");
+        }
+        else{
+          alert("FAIL");
+        }
+        
       }
       
 

@@ -36,7 +36,6 @@
 }
 
 .valid:before {
-  position: relative;
 
   content: "✔";
 }
@@ -47,7 +46,6 @@
 }
 
 .invalid:before {
-  position: relative;
 
   content: "✖";
 }
