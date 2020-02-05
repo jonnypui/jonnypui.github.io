@@ -58,20 +58,23 @@
       <input type="password" id="psw" name="psw" class="form-control" placeholder="Password">
 
       <label for="inputPassword2" class="sr-only">Password</label>
-      <input type="password" class="form-control" placeholder="ConfirmPassword" >
+      <input type="password" class="form-control" placeholder="Confirm Password" >
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
     </div>
       <!--Div for Password Requirements-->
       <center>
-      <div class="w-50 p-3" id="message">
 
-        <h3>Password must contain the following:</h3>
-        <p style="font-size:100%;" id="letter" class="invalid">A <b>lowercase</b> letter</p>
-        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-        <p id="number" class="invalid">A <b>number</b></p>
-        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-      </div>
+        <div class="w-25 p-3 rounded border border-primary .bg-light" id="message">
+
+            <h3>Password must contain the following:</h3>
+            <p style="font-size:100%;" id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            <p id="repeat" class="invalid">Confirm Password</p>
+        </div>
+
     </center>
     </form>
     
@@ -82,17 +85,7 @@
       var capital = document.getElementById("capital");
       var number = document.getElementById("number");
       var length = document.getElementById("length");
-      
-      // When the user clicks on the password field, show the message box
-      myInput.onfocus = function() {
-        document.getElementById("message").style.display = "block";
-      }
-      
-      // When the user clicks outside of the password field, hide the message box
-      myInput.onblur = function() {
-        document.getElementById("message").style.display = "none";
-      }
-      
+
       // When the user starts to type something inside the password field
       myInput.onkeyup = function() {
         // Validate lowercase letters
