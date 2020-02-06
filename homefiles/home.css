@@ -1,7 +1,12 @@
 .container1 {
     animation: transitionIn 1.3s;
 }
-
+.display-4{
+    color: white;
+}
+.subdisplay{
+    color: white;
+}
 @keyframes transitionIn {
     from {
         opacity: 0;
