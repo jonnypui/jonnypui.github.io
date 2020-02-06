@@ -2,11 +2,6 @@
     animation: transitionIn 1.3s;
 }
 
-
-.banner {
-    background-image: url("homefiles/banner.jpg");
-}
-
 @keyframes transitionIn {
     from {
         opacity: 0;
