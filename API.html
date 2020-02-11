@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JonP API</title>
+  <!-- Bootstrap core CSS -->
+  <link href="budgetvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="homefiles/home.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!--Fade animation-->
+<div class="container1">
+
+    <!--Top Section-->
+    <h1 class="mt-5">A Random Cat API</h1>
+    <p class="lead">From Jon P</p>
+    <br><br><br>
+
+    <!--Get the API-->
+    <button class="btn btn-warning mr-4" id="getPosts">Get CAT API</button>
+
+
+    <!--SCRIPT TIME BABY-->
+    <script>
+        document.getElementById('getPosts').addEventListener('click', getPosts);
+
+ 
+    function getPosts(){
+      fetch('https://api.thecatapi.com/v1/images/search')
+      .then((res) => res.json())
+      .then((data) => {
+          
+        let output = '<h2 class="mb-4">Users</h2>';
+        data.forEach(function(user){
+          output += `
+            <ul class="list-group mb-3">
+              <li class="list-group-item">ID: ${user.url}</li>
+            </ul>
+          `;
+        });
+        document.getElementById('output').innerHTML = output;
+      })
+    }
+    console.log(res);
+
+
+    </script>
+
+
+</div>
+
+
+</body>
+
+</html>
