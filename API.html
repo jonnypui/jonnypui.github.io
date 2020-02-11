@@ -6,10 +6,6 @@
   <!-- Bootstrap core CSS -->
   <link href="budgetvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link type="text/css" href="homefiles/home.css" rel="stylesheet">
-
-  <style>
-
-  </style>
 </head>
 
 <body class="text-center">
@@ -62,11 +58,12 @@
          fetch('https://api.thecatapi.com/v1/images/search')
              .then((res) => res.json())
                 .then((data) => {
-             let output = '<br><h2 class="mb-4">Meow!</h2>';
+             let output = '';
                data.forEach(function(post){
                  output += `
                  <div class="justify-content-center">
-                  <img src=${post.url} height="500px" width="600px"></img>
+                    <br>
+                    <img src=${post.url} height="500px" width="600px"></img>
                 </div>
           `;
         });
