@@ -1,11 +1,11 @@
 var i = 0;
-var autowidth = 0;
+var autowidth = 50;
 var automax = 100;
-var homewidth = 0;
+var homewidth = 25;
 var homemax = 200;
-var foodwidth = 0;
+var foodwidth = 60;
 var foodmax = 300;
-var hobbieswidth = 0;
+var hobbieswidth = 45;
 var hobbiesmax = 150;
 
 //Code for Auto Insurance
