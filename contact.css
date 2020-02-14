@@ -14,6 +14,19 @@ h1{
     text-shadow: 2px 2px 0 rgba(0,0,0,.5);
     float: left;
 }
+
+.badge-primary{
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    color: #fff;
+
+}
+.badge-primary:hover{
+    -webkit-transform: scale(1.1);
+    background: #31708f;
+}
+
 .btn-primary{
     box-shadow: 0 0 1px #ccc;
     -webkit-transition: all 0.5s ease-in-out;
