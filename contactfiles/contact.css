@@ -36,7 +36,7 @@ h1{
 }
 .btn-primary:hover{
     -webkit-transform: scale(1.1);
-    background: #31708f;
+    background: skyblue;
 }
 .btn-secondary{
     box-shadow: 0 0 1px #ccc;
@@ -47,7 +47,7 @@ h1{
 }
 .btn-secondary:hover{
     -webkit-transform: scale(1.1);
-    background: #31708f;
+    background: black;
 }
 .btn-warning{
     box-shadow: 0 0 1px #ccc;
@@ -58,6 +58,6 @@ h1{
 }
 .btn-warning:hover{
     -webkit-transform: scale(1.1);
-    background: #31708f;
+    background: darkorange;
 }
 
