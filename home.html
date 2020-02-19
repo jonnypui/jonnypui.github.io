@@ -51,12 +51,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top transparent">
     <div class="container">
       <a class="navbar-brand" href="home.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto float-right">
           <li class="nav-item active">
             <div class="grow">
             <a class="nav-link" href="home.html" style="color: yellow"><img src="homefiles/homeicon.png" width="15"> Home
@@ -81,20 +77,36 @@
   
   <!--Top Section-->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="homefiles/banner2.jpg" style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+        <img src="homefiles/banner3.jpg" style="width:98%; display: block; margin-left: auto; margin-right: auto;">
         <div class="carousel-caption">
           <p style="font-family:corbel; font-size:400%; text-shadow: 2px 2px #000000;">Jonathan Pui</p>
           <p style="font-family:Abadi Extra Light; font-size:150%; text-shadow: 2px 2px #000000;" >Just some fun projects I've played around with and had fun making.</p>
         </div>
       </div>
       <div class="item">
-        <img src="homefiles/banner3.jpg"  style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+        <img src="homefiles/banner4.jpg"  style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+        <div class="carousel-caption">
+        <p style="font-family:corbel; font-size:400%; text-shadow: 2px 2px #000000;">Jonathan Pui</p>
+        <p style="font-family:Abadi Extra Light; font-size:150%; text-shadow: 2px 2px #000000;">A great way to show off my personal skills!</p>
+        </div>
       </div>
       <div class="item">
-        <img src="homefiles/banner4.jpg"  style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+        <img src="homefiles/banner2.jpg"  style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+        <div class="carousel-caption">
+        <p style="font-family:corbel; font-size:400%; text-shadow: 2px 2px #000000;">Jonathan Pui</p>
+        <p style="font-family:Abadi Extra Light; font-size:150%; text-shadow: 2px 2px #000000;" >On the path to becoming a professional web-developer</p>
+        </div>
       </div>
     </div>
   </div>
@@ -149,28 +161,14 @@
 
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
-              <a href="#"><img class="card-img-top" src="#" style="height: 225px; width: 100%; display: block;"></a>
-              <div class="card-body">
-                <b>Placeholder Title</b>
-                <p class="card-text">Placeholder Text</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" ><a href="#">View</a></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <a href="#"><img class="card-img-top" src="#" style="height: 225px; width: 100%; display: block;"></a>
-              <div class="card-body">
-                <b>Placeholder Title</b>
-                <p class="card-text">Placeholder Text</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">View</a></button>
-                  </div>
+              <div class="box4">
+                <img class="card-img-top" src="homefiles/inprogress.png" style="height: 225px; width: 100%; display: block;">
+                <div class="box-content">
+                    <h3 class="title"></h3>
+                    <span class="post" style="background-color: white;">Currently In-Progress</span>
+                    <ul class="icon">
+                      <a href="#"><button type="button" class="btn btn-primary">View</button></a>
+                    </ul>
                 </div>
               </div>
             </div>
@@ -178,14 +176,29 @@
 
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
-              <a href="#"><img class="card-img-top" src="#" style="height: 225px; width: 100%; display: block;"></a>
-              <div class="card-body">
-                <b>Placeholder Title</b>
-                <p class="card-text">Placeholder Text</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">View</a></button>
-                  </div>
+              <div class="box4">
+                <img class="card-img-top" src="homefiles/inprogress.png" style="height: 225px; width: 100%; display: block;">
+                <div class="box-content">
+                    <h3 class="title"></h3>
+                    <span class="post" style="background-color: white;">Currently In-Progress</span>
+                    <ul class="icon">
+                      <a href="#"><button type="button" class="btn btn-primary">View</button></a>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <div class="box4">
+                <img class="card-img-top" src="homefiles/inprogress.png" style="height: 225px; width: 100%; display: block;">
+                <div class="box-content">
+                    <h3 class="title"></h3>
+                    <span class="post" style="background-color: white;">Currently In-Progress</span>
+                    <ul class="icon">
+                      <a href="#"><button type="button" class="btn btn-primary">View</button></a>
+                    </ul>
                 </div>
               </div>
             </div>
