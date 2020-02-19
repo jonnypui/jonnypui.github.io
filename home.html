@@ -7,6 +7,9 @@
   <link href="budgetvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link type="text/css" href="homefiles/home.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="illuminati.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style>
     /* Button Animations*/
@@ -22,17 +25,17 @@
 
     /* Card Animations*/
     .box4{position:relative}
-    .box4:before{width:0;height:200%;background:rgba(0,0,0,.5);position:absolute;top:0;left:-250px;bottom:0;transform:skewX(-36deg);transition:all .5s ease 0s}
+    .box4:before{width:0;height:200%;background:rgba(0,0,0,.5);position:absolute;top:0;left:-250px;bottom:0;transform:skewX(-36deg);transition:all 1s ease 0s}
     .box4:hover:before{width:200%}
     .box4 img{width:100%;height:auto}
-    .box4 .box-content{width:100%;height:100%;padding-top:20%;position:absolute;top:0;left:0;transform:scale(0);transition:all .3s ease 0s}
+    .box4 .box-content{width:100%;height:100%;padding-top:20%;position:absolute;top:0;left:0;transform:scale(0);transition:all 0.5s ease 0s}
     .box4 .icon,.box5 .icon{list-style:none;padding:0}
     .box4:hover .box-content{transform:scale(1)}
     .box4 .title{font-size:22px;font-weight:700;color:#000000;margin:0 0 10px}
     .box4 .post{display:block;font-size:15px;font-weight:600;color:#000000;margin-bottom:20px}
     .box4 .icon{margin:0}
     .box4 .icon li{display:inline-block}
-    .box4 .icon li a{display:block;width:35px;height:35px;line-height:35px;font-size:20px;background:#000000;color:#ee4266;margin-right:10px;transition:all .3s ease 0s}
+    .box4 .icon li a{display:block;width:35px;height:35px;line-height:35px;font-size:20px;background:#000000;color:#ee4266;margin-right:10px;transition:all 1s ease 0s}
     .box5 .icon,.box5 .icon li{display:inline-block}
     @media only screen and (max-width:990px){.box4{margin-bottom:30px}
     }
@@ -55,12 +58,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
+            <div class="grow">
             <a class="nav-link" href="home.html" style="color: yellow"><img src="homefiles/homeicon.png" width="15"> Home
               <span class="sr-only">(current)</span>
             </a>
+          </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html"><img src="homefiles/contacticon.png" width="18"> Contact</a>
+            <div class="grow">
+              <a class="nav-link" href="contact.html" ><img src="homefiles/contacticon.png" width="18"> Contact</a>
+            </div>
           </li>
         </ul>
       </div>
@@ -72,20 +79,42 @@
 
 
   <!--Top Section-->
+
+
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="overflow: hidden; background-size: cover; background-position: center; zoom: 1.3; background-image: url(homefiles/banner.jpg);">
       <div class="p-lg-5 my-5">
         <h1 class="display-4">Jonathan Pui</h1>
         <p class="subdisplay">Just some fun projects I've played around with and had fun making.</p>
       </div>
-      <div class="product-device box-shadow d-none d-md-block"></div>
-      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
     </div>
+    
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="homefiles/banner2.jpg" style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+          <div class="carousel-caption">
+            <h1 class="display-4">Jonathan Pui</h1>
+            <p class="subdisplay">Just some fun projects I've played around with and had fun making.</p>
+          </div>
+        </div>
+  
+        <div class="item">
+          <img src="homefiles/banner2.jpg"  style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+        </div>
+      
+        <div class="item">
+          <img src="homefiles/banner2.jpg"  style="width:98%; display: block; margin-left: auto; margin-right: auto;">
+        </div>
+      </div>
+  
+    
+    </div>
 
   <!-- Projects -->
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
       <div class="container">
-
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
@@ -180,21 +209,18 @@
         </div>
       </div>
     </div>
-
-    <center>
-    <! Div & Script below for facebook sdk>
-
-    
-
 </div>
-<div id="fb-root"></div>
+
+<center>
+  <! Div & Script below for facebook sdk>
+  <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
     <! Div below for sharing my site to Facebook>
     <div class="fb-share-button" data-href="https://jonnypui.github.io/home.html" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjonnypui.github.io%2FMain.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
       <br><br>
     <! Sharing to Twitter>
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out Jawwni&#39;s website" data-url="https://jonnypui.github.io/home.html" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </center>
+</center>
     <br><br><br>
 </body>
 
