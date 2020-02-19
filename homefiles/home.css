@@ -3,10 +3,10 @@
     transition-delay: 1s;
 }
 .display-4{
-    color: white;
+    color: black;
 }
 .subdisplay{
-    color: white;
+    color: black;
 }
 @keyframes transitionIn {
     from {
