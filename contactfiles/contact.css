@@ -71,10 +71,10 @@ h1{
   
   @-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(76, 0, 255), 0 0 30px #c4ff23, 0 0 40px #cefd23, 0 0 50px #e60073, 0 0 60px #000000, 0 0 70px #e60073;
+      text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(76, 0, 255), 0 0 30px #2344ff, 0 0 40px #cefd23, 0 0 50px #fffb2c, 0 0 60px #000000, 0 0 70px #d5f51e;
     }
     
     to {
-      text-shadow: 0 0 20px rgb(207, 252, 6), 0 0 30px #a7f517, 0 0 40px #3609ff, 0 0 50px #e73c30, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #810845;
+      text-shadow: 0 0 20px rgb(31, 6, 252), 0 0 30px #a7f517, 0 0 40px #3609ff, 0 0 50px #e3f11d, 0 0 60px #f3ff4d, 0 0 70px #dff520, 0 0 80px #810845;
     }
   }
