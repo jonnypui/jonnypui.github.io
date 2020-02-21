@@ -6,6 +6,7 @@
   <!-- Bootstrap core CSS -->
   <link href="budgetvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link type="text/css" href="homefiles/home.css" rel="stylesheet">
+  <link type="text/css" href="gamefiles/hang.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
@@ -34,6 +35,7 @@
       </div>
     </div>
   </nav>
+  <img src="gamefiles/head.png" STYLE="position:absolute; top:335px; left:1505px; width:50px;>
 
     <!--Fade animation-->
     <div class="container1">
@@ -41,20 +43,32 @@
         <!--Top Section-->
         <h1 class="mt-5">HangMan game</h1>
         <p class="lead">From Jon P</p>
-        <br><br><br>
+        <br>
+
+        <!--Level Indicator-->
+        <h2>Level: <span id="level">1</span></h2>
+        <br>
+
+        <!--Hangman-->
+        <div class="center1">
+          <img src="gamefiles/hang.png" width="150">  
+        </div>
 
 
-              <div class="center">
-                <img src="gamefiles/hang.png" width="200">  
-              </div>
+        <!--Guesses-->
+        <h7>You have <span id="guesses">5</span> guesses left!</h2>
+        <!--Guess tiles-->
 
 
-
+        <!--Available letters-->
 
 
 
     </div>
 
+
+
+    <script src="gamefiles/hang.js"></script>
 
 </body>
 
