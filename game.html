@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JonP Game</title>
+  <!-- Bootstrap core CSS -->
+  <link href="budgetvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="homefiles/home.css" rel="stylesheet">
+  <link type="text/css" href="gamefiles/hang.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="game.html">HangMan</a>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <div class="grow">
+              <a class="nav-link" href="home.html"><img src="homefiles/homeicon.png" width="15"> Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </div>
+            </li>
+            <li class="nav-item">
+              <div class="grow">
+                <a class="nav-link" href="contact.html" ><img src="homefiles/contacticon.png" width="18"> Contact</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <!--Fade animation-->
+    <div class="container1">
+
+        <img src="gamefiles/head.png" STYLE="position:absolute; top:335px; left:1505px; width:50px;">
+
+        <!--Top Section-->
+        <h1 class="mt-5">HangMan game</h1>
+        <p class="lead">From Jon P</p>
+        <br>
+
+        <!--Level Indicator-->
+        <h2>Level: <span id="level">1</span></h2>
+        <br>
+
+        <!--Hangman-->
+        <div class="center1">
+          <img src="gamefiles/hang.png" width="150">  
+        </div>
+
+
+        <!--Guesses-->
+        <h7>You have <span id="guesses">5</span> guesses left!</h2>
+        <!--Guess tiles-->
+
+
+        <!--Available letters-->
+
+
+
+    </div>
+
+
+
+    <script src="gamefiles/hang.js"></script>
+
+</body>
+
+</html>
